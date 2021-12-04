@@ -1,0 +1,74 @@
+CALL FOR PAPERS
+
+HCOMP Workshop on Mathematical Foundations of Human Computation
+
+November 3, 2016
+Austin, TX, USA
+
+Submissions due August 1, 2016
+
+http://chienjuho.com/workshops/mathematical-foundations-of-human-computation/
+
+
+OVERVIEW:
+---------
+
+There is great untapped potential for foundational mathematical research to
+influence and shape the future of human computation. Indeed there is already
+a small literature on the use of mathematical models to analyze and design
+human computation systems including crowdsourcing markets, prediction
+markets, and user-generated content sites. However, we are far from having
+a  full systematic understanding of the possibilities and limitations of
+human computation.
+
+This workshop will bring together researchers across disciplines to discuss
+the future of research on the mathematical foundations of human computation,
+with particular emphasis on the ways in which theorists can learn from the
+existing empirical literature on human computation and the ways in which
+applied and empirical work on human computation can benefit from
+mathematical foundations.
+
+For more information, see the workshop website.
+
+
+PAPER SUBMISSIONS:
+------------------
+
+We solicit contributed papers of two types:
+
+(1) Research papers report the results of new, recent, or ongoing research.
+
+(2) Position papers describe the authors' vision of how the mathematical
+foundations of human computation should evolve as a field.
+
+Papers may be up to three pages long with an optional fourth page containing
+references only. Please use any single column format and a font size of at
+least 11 pt.  Accepted papers will be made available on the workshop
+website. However, the workshop will have no archival proceedings, meaning
+contributors are free to publish their results subsequently in archival
+journals or conferences. We also welcome submissions of work that has
+recently (within the last year) been published in other conferences.
+Simultaneous submission to HCOMP is not allowed. Papers should be submitted 
+via EasyChair and do not need to be anonymized.
+
+Submission site: https://easychair.org/conferences/?conf=math-hcomp2016
+Deadline for submissions: Monday, August 1, 2016
+Notification of acceptance: on or around Friday, August 26, 2016
+
+
+CONFIRMED INVITED SPEAKERS:
+--------------------------
+
+Emery Berger, University of Massachusetts Amherst
+Manuel Blum, Carnegie Mellon University
+Adam Tauman Kalai, Microsoft Research
+Jaime Teevan, Microsoft Research
+
+ORGANIZING COMMITTEE:
+---------------------
+
+Shuchi Chawla, University of Wisconsin - Madison
+Chien-Ju Ho, Cornell University
+Michael Kearns, University of Pennsylvania
+Jenn Wortman Vaughan, Microsoft Research
+Santosh Vempala, Georgia Tech

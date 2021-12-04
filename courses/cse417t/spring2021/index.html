@@ -1,0 +1,334 @@
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+   
+ <title>CSE 417T: Spring 2021</title>
+</head>
+
+
+<body link="#3333ff" alink="#000099" bgcolor="#ffffff" text="#000000" vlink="#ff0000">
+
+<center>Washington University in St. Louis<br>
+Department of Computer Science and Engineering
+
+<font size="-1"></font></center>
+
+<p><br>
+
+</p>
+
+<center>
+<h2><font color="#800000">CSE 417T: Introduction to Machine Learning</font></h2>
+
+</center>
+
+<center>
+<h2><font color="#800000"><font size="+2">Spring 2021</font></font></h2>
+
+</center>
+
+
+<h4>ANNOUNCEMENTS</h4>
+
+<ul>
+
+  <li>Welcome to CSE 417T: Introduction to Machine Learning!</li> <br/>
+
+
+  <li> There will be two in-class exams, with no separate final exam. 
+  <!-- The two in-class exams will occur in the same location as lectures, at the same time. -->
+  The dates and logistics for these exams will be announced during the semester. </li> <br/>
+ 
+  <li>We will use Gradescope for submitting homework assignments. <a href="https://www.gradescope.com/courses/230478">Here</a> is the link to the course.   You should already be added to the roster via Canvas.</li><br>
+  
+  <li>We will use Piazza for discussions and questions. 
+  You can sign up for the class on Piazza <a href="http://piazza.com/wustl/spring2021/cse417t">here</a>.</li><br>
+  
+  <li> Useful resources:
+  <ul>
+    <li><a href="http://www.wzchen.com/probability-cheatsheet">Probability Cheatsheet</a></li>
+    <li><a href="http://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf">The Matrix Cookbook</a></li> 
+  </ul>
+
+</ul>
+
+<h4>OVERVIEW</h4>
+This course is an introduction to machine learning, focusing on 
+supervised learning. We will cover the mathematical foundations of
+learning as well as a number of important techniques for
+classification and regression, including linear and logistic
+regression, neural networks, nearest neighbor techniques, kernel
+methods, decision trees, and ensemble methods.
+Note that the material in this course is a prerequisite for CSE 517A,
+the graduate level machine learning class. The overlap with CSE 511A
+(Artificial Intelligence) is minimal.
+
+<h4>STAFF</h4>
+
+<p>
+<b>Instructors:</b>
+
+<table style="width: 70%" nosave="" border="1">
+<tbody>
+  
+  <tr>
+      <td>Instructor</td>
+      <td>Email</td>
+      <td>Lecture Time</td>
+<!--      <td>Office Hours</td>-->
+  </tr>
+  <tr>
+    <td>Chien-Ju Ho</td>
+    <td>chienju.ho at wustl dot edu</td>
+    <td>Tue/Thu 11:30AM-12:50PM</td>
+<!--    <td>TBA </td>-->
+  </tr>
+</tbody>
+</table>
+</p>
+
+<p><b>TAs:</b><br> 
+There are several graduate and undergraduate TAs for the class. All assistants will
+hold regular office hours, answer questions on Piazza, and grade
+homeworks. 
+
+<table nosave="" border="1">
+<tbody>
+  <tr>
+      <td>TA</td>
+      <td>Email</td>
+  </tr>
+</tbody>
+</table>
+</p>
+
+<p><b>Office Hours</b>
+<br>
+
+Check Piazza posts for the schedule of office hours.
+<br>
+
+<h4>POLICIES</h4>
+
+Detailed policies are in the official syllabus below. A few points to highlight: please
+ read and understand the <b>collaboration policy</b> and the <b>late
+ day policy</b>. There will be two exams, each covering
+ approximately half the course material, and no separate final exam.
+ <ul>
+    <li><a href="syllabus.pdf">Course Syllabus</a></li>
+ </ul>
+
+<h4>TEXTBOOKS</h4>
+
+The main course textbook is:
+<ul>
+<li>LFD: <i><a href="http://amlbook.com/">Learning From Data</a></i>,
+  Abu-Mostafa, Magdon-Ismail, and Lin. </li>
+</ul>
+
+We also plan to cover some sections of the following book:
+<ul>
+<li>CASI: <i><a href="https://web.stanford.edu/~hastie/CASI/">Computer Age Statistical Inference</a></i>, Efron and Hastie (PDF freely available on the textbook website.)</li>
+</ul>
+
+<h4>PREREQUISITES</h4>
+
+CSE 247, ESE 326 (or Math 3200), Math 233, and Math 309 (can be taken
+concurrently) or equivalents. If you do not have a solid background in
+calculus, probability, and computer science through a class in data
+structures and algorithms then you may have a hard time in this
+class. Matrix algebra will be used and is fundamental to modern
+machine learning, but it's OK to take that class concurrently.
+
+<h4>SCHEDULE, READING, AND ASSIGNMENTS</h4>
+<center>
+<table style="width: 95%; height: 10%;" nosave="" border="1">
+  <tbody>
+    <tr>
+      <td>Date</td>
+      <td>Topics</td>
+      <td>Readings</td>
+      <td>Assignments</td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 26</td> 
+      <td>Introduction. Course policies. Course overview. Perceptron learning algorithm.</td>
+      <td>LFD 1.1, 1.2. <a href="lecture1.pdf">Slides</a></td>
+      <td><a href="hw0.pdf">hw0</a><br/><a href="hw_instructions.html">Submission Instructions</a></td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 28</td> 
+      <td>Generalizing outside the training set, Hoeffding's inequality.</td>
+      <td>LFD 1.3. <a href="lecture2.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 2</td> 
+      <td>Multiple hypotheses. Error and noise. </td>
+      <td>LFD 1.3-1.4. <a href="lecture3.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 4</td> 
+      <td>Infinite hypothesis spaces, growth functions.</td>
+      <td>LFD 2.1.1. <a href="lecture4.pdf">Slides</a></td>
+      <td><a href="hw1.pdf">hw1</a> (Due: Feb 19)</td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 9</td> 
+      <td>VC generalization bound, VC Dimension.</td>
+      <td>LFD 2.1 <a href="lecture5.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 11</td> 
+      <td>Continue on VC generalization bound, bias-variance tradeoff.</td>
+      <td>LFD 2.2-2.3. <a href="lecture6.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 16</td> 
+      <td>Linear classification, linear regression.</td>
+      <td>LFD 3.1-3.2. <a href="lecture7.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 18</td> 
+      <td>Logistic regression, gradient descent.</td>
+      <td>LFD 3.3. <a href="lecture8.pdf">Slides</a></td>
+      <td><a href="hw2.pdf">hw2</a> (Due: Mar 8)</td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 23</td> 
+      <td>Continue on gradient descent, nonlinear transformation.</td>
+      <td>LFD 3.3-3.4. <a href="lecture9.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 25</td> 
+      <td>Overfitting. VC dimension of Perceptron.</td>
+      <td>LFD 4.1. <a href="lecture10.pdf">Slides</a></td>
+      <td></td>
+    </tr> 
+    <tr nosave="">
+      <td>Mar 2</td> 
+      <td>No Class (Wellness Day)</td>
+      <td></td>
+      <td></td>
+    </tr> 
+    <tr nosave="">
+      <td>Mar 4</td> 
+      <td>Regularization. </td>
+      <td>LFD 4.2. <a href="lecture11.pdf">Slides</a></td> 
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Mar 9</td> 
+      <td>Validation. </td>
+      <td>LFD 4.3. <a href="lecture12.pdf">Slides</a></td> 
+      <td><a href="hw3.pdf">hw3</a> (Due: Mar 19)</td>
+    </td>
+     <tr nosave="">
+      <td>Mar 11</td> 
+      <td>Three learning principles. Decision Trees and ID3.</td>
+      <td>LFD 5. Tom Mitchell, Machine Learning <a href="mitchell-dectrees.pdf">Ch3</a>. CASI 8.4. <a href="lecture13.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 16</td> 
+      <td>Bagging. Random Forest.</td>
+      <td>CASI 17.1. <a href="lecture14.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 18</td> 
+      <td>Review session for Exam 1.</td>
+      <td><a href="exam1-review.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 23</td> 
+      <td>Exam 1.</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 25</td> 
+      <td>Boosting. AdaBoost.</td>
+      <td><a href="IntroToBoosting.pdf">Freund & Schapire's Tutorial</a>. CASI 17.4. <a href="lecture15.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 30</td> 
+      <td>Continue on Boosting. Nearest Neighbor.</td>
+      <td>LFD eChapter 6.1-6.2.2. <a href="lecture16.pdf">Slides</a></td>
+      <td><a href="hw4.pdf">hw4</a> (Due: Apr 19)</td>
+    </tr>
+ 	<tr nosave="">
+      <td>Apr 1</td> 
+      <td>Efficiency on k-Nearest Neighbor. </td>
+      <td>LFD eChapter 6.2.3-6.2.4 <a href="lecture17.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+ 	<tr nosave="">
+      <td>Apr 6</td> 
+      <td>Hard-margin and soft-margin Support Vector Machines (SVMs).</td>
+      <td>LFD eChapter 8.1. <a href="lecture18.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+ 	<tr nosave="">
+      <td>Apr 8</td> 
+      <td>Dual SVMs and Kernel Tricks.</td>
+      <td>LFD eChapter 8.2-8.3. <a href="lecture19.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+ 	<tr nosave="">
+      <td>Apr 13</td> 
+      <td>Continue on Kernel Tricks. Neural Networks.</td>
+      <td>LFD eChapter 8.3-8.4. LFD eChapter 7.1. <a href="lecture20.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+ 	<tr nosave="">
+      <td>Apr 14</td> 
+      <td>Backpropagation.</td>
+      <td>LFD eChapter 7.2. <a href="lecture21.pdf">Slides</a> </td>
+      <td><a href="hw5.pdf">hw5</a> (Due: Apr 30)</td>
+    </tr>
+   <tr nosave="">
+      <td>Apr 20</td>
+      <td>Regularizations in Neural Networks. Deep Learning.</td>
+      <td>LFD eChapter 7.4 and 7.6. <a href="lecture22.pdf">Slides</a></td>
+      <td></td>
+    </tr>    
+   <tr nosave="">
+      <td>Apr 22</td>
+      <td>Radial Basis Functions (RBF). Strategic Machine Learning.</td>
+      <td>LFD eChapter 6.3. <a href="lecture23.pdf">Slides</a></td>
+      <td></td>
+    </tr>    
+   <tr nosave="">
+      <td>Apr 27</td>
+      <td>Fairness in Machine Learning.</td>
+      <td><a href="lecture24.pdf">Slides</a></td>
+      <td></td>
+    </tr>    
+   <tr nosave="">
+      <td>Apr 29</td>
+      <td>Review Session for Exam 2</td>
+      <td><a href="exam2-review.pdf">Slides</a></td>
+      <td></td>
+    </tr>    
+   <tr nosave="">
+      <td>May 4</td>
+      <td>Exam 2.</td>
+      <td></td>
+      <td></td>
+    </tr>    
+</table>
+
+</center>
+
+<br>
+<br/>
+
+
+</body></html>

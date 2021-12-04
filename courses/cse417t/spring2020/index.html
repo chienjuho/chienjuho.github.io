@@ -1,0 +1,436 @@
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+   
+ <title>CSE 417T: Spring 2020</title>
+</head>
+
+
+<body link="#3333ff" alink="#000099" bgcolor="#ffffff" text="#000000" vlink="#ff0000">
+
+<center>Washington University in St. Louis<br>
+Department of Computer Science and Engineering
+
+<font size="-1"></font></center>
+
+<p><br>
+
+</p>
+
+<center>
+<h2><font color="#800000">CSE 417T: Introduction to Machine Learning</font></h2>
+
+</center>
+
+<center>
+<h2><font color="#800000"><font size="+2">Spring 2020</font></font></h2>
+
+</center>
+
+
+<h4>ANNOUNCEMENTS</h4>
+
+<ul>
+
+
+  <li><a
+href="http://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf">The
+Matrix Cookbook</a> is a great resource.</li><br>
+
+<li>Here's a <a href="https://sites.wustl.edu/neumann/resources/intro-to-matlab/">page</a> with some useful introductory Matlab resources.</li><br>
+  <ul>
+    <li>For undergraduate students or engineering graduate students, you can get MATLAB access from <a href="https://www.mathworks.com/academia/tah-portal/washington-university-st-louis-30847712.html">this portal</a> (and <a href="https://sts.wustl.edu/matlab-free-for-students">here</a> is the instruction). If you need assistance, email <a href="mailto:softwarelicensing@wustl.edu">softwarelicensing@wustl.edu</a></li>
+    <li>For non-engineering graduate students, please try the above first. 
+    If it's not working, you can try <a href="https://engineering.wustl.edu/our-school/leadership/offices/engineering-it/computer-labs-printing/Pages/default.aspx">the computer labs</a>, use <a href="https://engineering.wustl.edu/our-school/leadership/offices/engineering-it/networks-remote-access/Pages/academic-remote-desktop-server.aspx">remote desktop</a>, or <a href="https://commerce.cashnet.com/WUIT_Software%20Licensing">purchase a student copy</a>. </li>
+   <!-- follow the instructions found <a href="https://sites.wustl.edu/neumann/resources/accessing-matlab/">here</a>.</li>-->
+  </ul><br>
+
+  <li> There will be two in-class exams, with no separate final exam. The two in-class exams will occur in the same location as lectures, at the same time. The dates for these exams are: </li>
+  <table style="width: 25%" nosave="" border="1">
+  <tbody>
+  <tr>
+    <td>Exam 1</td>
+    <td>March 3, 2020</td>
+  </tr>
+  <tr>
+    <td>Exam 2</td>
+    <td>April 23, 2020</td>
+  </tr>
+  </tbody>
+  </table>
+  <br/>
+ 
+<li>We will use Gradescope for submitting homework assignments. <a href="https://www.gradescope.com/courses/81695">Here</a> is the link to the course.  
+You should already be added to the roster via Canvas.</li><br>
+  
+<li>We will use Piazza for discussions and questions. 
+  You can sign up for the class on Piazza <a href="http://piazza.com/wustl/spring2020/cse417t">here</a>.</li><br>
+  
+<li>Welcome to CSE 417T: Introduction to Machine Learning!</li>
+
+
+</ul>
+
+<h4>OVERVIEW</h4>
+This course is an introduction to machine learning, focusing on 
+supervised learning. We will cover the mathematical foundations of
+learning as well as a number of important techniques for
+classification and regression, including linear and logistic
+regression, neural networks, nearest neighbor techniques, kernel
+methods, decision trees, and ensemble methods.
+Note that the material in this course is a prerequisite for CSE 517A,
+the graduate level machine learning class. The overlap with CSE 511A
+(Artificial Intelligence) is minimal.
+
+<h4>STAFF</h4>
+
+<p>
+<b>Instructors:</b>
+
+<table style="width: 70%" nosave="" border="1">
+<tbody>
+  
+  <tr>
+      <td>Instructor</td>
+      <td>Email</td>
+      <td>Lecture Time</td>
+      <td>Office Hours</td>
+  </tr>
+  <tr>
+    <td>Chien-Ju Ho</td>
+    <td>chienju.ho at wustl dot edu</td>
+    <td>Tue/Thu 11:30AM-12:50PM</td>
+    <td>Thursdays 1:00PM-2:30PM<br/>(Will answer questions after class first. Then head back to Jolley 510.)</td>
+  </tr>
+</tbody>
+</table>
+</p>
+
+<p><b>TAs:</b><br> 
+There are several graduate and undergraduate TAs for the class. All assistants will
+hold regular office hours, answer questions on Piazza, and grade
+homeworks. 
+
+<table nosave="" border="1">
+<tbody>
+  <tr>
+      <td>TA</td>
+      <td>Email</td>
+  </tr>
+  <tr>
+	<td>Ina Chen</td> 
+	<td>chenyuxuan at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Brendan Gillow</td> 
+	<td>b.gillow at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Xinyu Guo</td>
+	<td>xinyuguo at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Ziyang Jiao</td> 
+	<td>jiaoziyang at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Jiahao Li</td>
+	<td>jiahao.li at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Connor Monahan</td> 
+	<td>cmonahan at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Flora Sun</td> 
+	<td>zhixin.sun at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Tong Wu</td> 
+	<td>tongwu at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Ruoyao Yang</td> 
+	<td>yangruoyao at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Yi Wang </td> 
+	<td>w.yi1 at wustl dot edu</td>
+  </tr>
+  <tr>
+	<td>Heming Zhang</td> 
+	<td>hemingzhang at wustl dot edu</td>
+  </tr>
+</tbody>
+</table>
+</p>
+
+<p><b>Office Hours</b>
+<br>
+
+Here is a grid with information on office hours organized by day of the week. 
+
+<table  border="1">
+<tbody>
+  <tr>
+    <td> </td><td colspan="2"> Office Hours </td> <td> Location</td> 
+  </tr>
+  <tr>
+    <td>Mondays</td>
+    <td>1:30-3:00PM (Flora)</td>
+    <td>4:30-6:00PM (Heming)</td> 
+    <td>Jolley 431</td>
+  </tr>
+
+  <tr>
+    <td>Tuesdays</td>
+    <td>8:30-10:00AM (Xinyu)</td>
+    <td>3:00-4:30PM (Yi)</td>
+    <td>Jolley 431</td>
+  </tr>
+  <tr>
+    <td>Wednesdays</td>
+    <td>10:00-11:30AM (Ruoyao)</td>
+    <td>12:30-2:00PM (Ziyang)</td>
+    <td>Jolley 431</td>
+  </tr>
+
+  <tr>
+    <td>Thursdays</td>
+    <td>2:30-4:00PM (Tong)</td>
+    <td>4:00-5:30PM (Connor)</td>
+    <td>Jolley 431</td>
+  </tr>
+
+  <tr>
+    <td>Fridays</td>
+    <td>12:30-2:00PM (Brendan)</td>
+    <td>2:30-4:00PM (Jiahao)</td>
+    <td>Jolley 309</td>
+  </tr>
+
+  <tr>
+    <td>Sundays</td>
+    <td>5:00-6:30PM (Ina)</td>
+    <td></td>
+    <td>Jolley 408</td>
+  </tr>
+</tbody>
+</table>
+
+<br>
+
+<h4>POLICIES</h4>
+
+Detailed policies are in the official <a
+ href="syllabus.pdf">syllabus</a>. A few points to highlight: please
+ read and understand the <b>collaboration policy</b> and the <b>late
+ day policy</b>. There will be two exams, each covering
+ approximately half the course material, and no separate final exam.
+ <ul>
+
+<li><a href="syllabus.pdf">Course Syllabus</a></li>
+
+</ul>
+
+<h4>TEXTBOOKS</h4>
+
+The main course textbook is:
+<ul>
+<li>AML (or LFD): <i><a href="http://amlbook.com/">Learning From Data</a></i>,
+  Abu-Mostafa, Magdon-Ismail, and Lin. </li>
+</ul>
+
+We also plan to cover some sections of the following book:
+<ul>
+<li>CASI: <i><a href="https://web.stanford.edu/~hastie/CASI/">Computer Age Statistical Inference</a></i>, Efron and Hastie (PDF available on the textbook website.)</li>
+</ul>
+
+<h4>PREREQUISITES</h4>
+
+CSE 247, ESE 326 (or Math 320), Math 233, and Math 309 (can be taken
+concurrently) or equivalents. If you do not have a solid background in
+calculus, probability, and computer science through a class in data
+structures and algorithms then you may have a hard time in this
+class. Matrix algebra will be used and is fundamental to modern
+machine learning, but it's OK to take that class concurrently.
+
+<h4>SCHEDULE, READING, AND ASSIGNMENTS</h4>
+<center>
+<table style="width: 95%; height: 10%;" nosave="" border="1">
+  <tbody>
+    <tr>
+      <td>Date</td>
+      <td>Topics</td>
+      <td>Readings</td>
+      <td>Assignments</td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 14</td> 
+      <td>Introduction. Course policies. Course overview. Perceptron learning algorithm.</td>
+      <td>AML 1.1, 1.2. <a href="lecture1.pdf">Slides</a></td>
+      <td><a href="hw0.pdf">hw0</a><br/><a href="hw_instructions.html">Submission Instructions</a></td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 16</td> 
+      <td>Generalizing outside the training set, Hoeffding's inequality.</td>
+      <td>AML 1.3. <a href="lecture2.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 21</td> 
+      <td>Short intro to Matlab. Multiple hypotheses. Error and noise. </td>
+      <td>AML 1.3-1.4. <a href="lecture3.pdf">Slides</a></td>
+      <td><a href="hw1.pdf">hw1</a> (Due: Feb 7)</td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 23</td> 
+      <td>Infinite hypothesis spaces, growth functions.</td>
+      <td>AML 2.1.1. <a href="lecture4.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 28</td> 
+      <td>VC generalization bound, VC Dimension.</td>
+      <td>AML 2.1 <a href="lecture5.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Jan 30</td> 
+      <td>Discussion on VC generalization bound, bias-variance tradeoff.</td>
+      <td>AML 2.2-2.3. <a href="lecture6.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 4</td> 
+      <td>The pocket algorithm, linear regression.</td>
+      <td>AML 3.1-3.2. <a href="lecture7.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 6</td> 
+      <td>Logistic regression, gradient descent.</td>
+      <td>AML 3.3. <a href="lecture8.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 11</td> 
+      <td>Continue on gradient descent, nonlinear transformation.</td>
+      <td>AML 3.3-3.4. <a href="lecture9.pdf">Slides</a></td>
+      <td><a href="hw2.pdf">hw2</a> (Due: Feb 24)</td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 13</td> 
+      <td>Overfitting.</td>
+      <td>AML 4.1. <a href="lecture10.pdf">Slides</a></a>
+      </td>
+      <td></td>
+    </tr> 
+    <tr nosave="">
+      <td>Feb 18</td> 
+      <td>Regularization. </td>
+      <td>AML 4.2. <a href="lecture11.pdf">Slides</a></td> 
+      <td></td>
+    </tr>
+    <tr nosave="">
+      <td>Feb 20</td> 
+      <td>Continue on regularization, validation. </td>
+      <td>AML 4.2-4.3. <a href="lecture12.pdf">Slides</a></td> 
+      <td></td>
+    </td>
+     <tr nosave="">
+      <td>Feb 25</td> 
+      <td>Three learning principles.</td>
+      <td>AML 5. <a href="lecture13.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Feb 27</td> 
+      <td>Review session for exam 1.</td>
+      <td><a href="lecture14.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 3</td> 
+      <td>Exam 1.</td>
+      <td></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 5</td> 
+      <td>Discussion on Exam 1. Decision Trees and ID3</td>
+      <td>Tom Mitchell, Machine Learning <a href="mitchell-dectrees.pdf">Ch3</a>. CASI 8.4. <a href="lecture15.pdf">Slides</a></td>
+      <td><a href="hw3.pdf">hw3</a> (Due: Mar 27)</td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 24</td> 
+      <td>Bagging. Random Forest.</td>
+      <td>CASI 17.1. <a href="lecture16.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 26</td> 
+      <td>Boosting. AdaBoost.</td>
+      <td><a href="IntroToBoosting.pdf">Freund & Schapire's Tutorial</a>. CASI 17.4. <a href="lecture17.pdf">Slides</a></td>
+      <td><a href="hw4.pdf">hw4</a> (Due: Apr 13)</td>
+    </tr>
+     <tr nosave="">
+      <td>Mar 31</td> 
+      <td>Nearest Neighbor.</td>
+      <td>AML eChapter 6.1-6.2.2. <a href="lecture18.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+ 	<tr nosave="">
+      <td>Apr 2</td> 
+      <td>Support Vector Machines (SVMs)</td>
+      <td>AML eChapter 8.1. <a href="lecture19.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+
+ 	<tr nosave="">
+      <td>Apr 7</td> 
+      <td>Dual SVMs and Kernel Tricks</td>a
+      <td>AML eChapter 8.2-8.3. <a href="lecture20.pdf">Slides</a></td>
+      <td><a href="hw5.pdf">hw5</a> (Due: Apr 19, <b>11:30AM</b>)</td>
+    </tr>
+
+ 	<tr nosave="">
+      <td>Apr 9</td> 
+      <td>Continue on Kernel Trick. Neural Networks.</td>
+      <td>AML eChapter 8.3-8.4. AML eChapter 7.1. <a href="lecture21.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+
+ 	<tr nosave="">
+      <td>Apr 14</td> 
+      <td>Backpropagation.</td>
+      <td>AML eChapter 7.2. <a href="lecture22.pdf">Slides</a></td>
+      <td></td>
+    </tr>
+
+   <tr nosave="">
+      <td>Apr 16</td>
+      <td>Regularizations in Neural Networks. Deep Learning.</td>
+      <td>AML eChapter 7.4 and 7.6. <a href="lecture23.pdf">Slides</a></td>
+      <td></td>
+    </tr>    
+   <tr nosave="">
+      <td>Apr 21</td>
+      <td>Review Session.</td>
+      <td><a href="lecture24.pdf">Slides</a>. <a href="exam2-practice.pdf">Practice Questions</a></td>
+      <td></td>
+    </tr>    
+   <tr nosave="">
+      <td>Apr 23</td>
+      <td>Exam 2.</td>
+      <td></td>
+      <td></td>
+    </tr>    
+</table>
+
+</center>
+
+<br>
+<br/>
+
+
+</body></html>
