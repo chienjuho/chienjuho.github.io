@@ -19,7 +19,7 @@ def perceptron_learn(data_in):
 
 
 def perceptron_experiment(N, d, num_exp):
-    # Code for running the perceptron experiment in HW1
+    # Code for running the perceptron experiment in HW0
     # Implement the dataset construction and call perceptron_learn; repeat num_exp times
     #
     # Inputs: N is the number of training data points
