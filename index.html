@@ -133,16 +133,16 @@ function showPapers(label){
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   y = document.getElementsByClassName("toggle");
-  if (label == "all"){
-     for (i = 0; i < x.length; i++) 
-        x[i].style.display="";
-  }else{
+//  if (label == "all"){
+//    for (i = 0; i < x.length; i++) 
+//        x[i].style.display="";
+//  }else{
     for (i = 0; i < x.length; i++) {
         x[i].style.display="none";
         if (x[i].className.indexOf(label) > -1) 
             x[i].style.display="";
     }
-  }
+//  }
 
   for (i=0; i < y.length; i++){
     y[i].style.textDecoration = "";
@@ -159,7 +159,7 @@ function showPapers(label){
 <ul>
 
 Filters: 
-<a href="javascript:showPapers('all')" class="toggle c-all" style="text-decoration: underline; font-weight: bold">all</a>,
+<a href="javascript:showPapers('allpaper')" class="toggle c-allpaper" style="text-decoration: underline; font-weight: bold">all</a>,
 <a href="javascript:showPapers('bias')" class="toggle c-bias">learning with strategic or biased human behavior</a>,
 <a href="javascript:showPapers('exp')" class="toggle c-exp">modeling humans with behavioral experiments</a>,
 <a href="javascript:showPapers('ethics')" class="toggle c-ethics">fairness and privacy</a>,
@@ -172,114 +172,118 @@ Filters:
 
 <br/><br/>
 
-<div class="filterDiv crowdsourcing exp ethics"> <li> <a href="">The Influences of Task Design on Crowdsourced Judgement: A Case Study of Recidivism Risk Evaluation</a> (Coming Soon)<br/>
+<div class="filterDiv allpaper crowdsourcing exp ethics"> <li> <a href="">The Influences of Task Design on Crowdsourced Judgement: A Case Study of Recidivism Risk Evaluation</a> (Coming Soon)<br/>
 Xiaoni Duan, Chien-Ju Ho, and Ming Yin<br/>
-To appear in the Web Conference 2022 (WWW'22)
+To appear in the Web Conference (WWW), 2022
 </li><br/></div>
 
 
-<div class="filterDiv bandit ethics ml bias"> <li> <a href="pub/NeurIPS21_DelayedImpacts.pdf">Bandit Learning with Delayed Impact of Actions</a><br/>
+<div class="filterDiv allpaper bandit ethics ml bias"> <li> <a href="pub/NeurIPS21_DelayedImpacts.pdf">Bandit Learning with Delayed Impact of Actions</a><br/>
 Wei Tang, Chien-Ju Ho, and Yang Liu<br/>
-In the 35th Conference on Neural Information Processing Systems (NeurIPS'21)
+In the 35th Conference on Neural Information Processing Systems (NeurIPS), 2021
 </li><br/>
 </div>
 
-<div class="filterDiv exp game bias"> <li><a href="pub/HCOMP21_BehaviroalInfoDesign.pdf">On the Bayesian Rational Assumption in Information Design</a><br/>
+<div class="filterDiv allpaper exp game bias"> <li><a href="pub/HCOMP21_BehaviroalInfoDesign.pdf">On the Bayesian Rational Assumption in Information Design</a><br/>
 Wei Tang and Chien-Ju Ho<br/>
-In the 9th AAAI Conference on Human Computation and Crowdsourcing (HCOMP'21)<br/>
+In the 9th AAAI Conference on Human Computation and Crowdsourcing (HCOMP), 2021<br/>
 <b>Best Paper Honorable Mention</b><br/>
 </li><br/></div>
 
+<div class="filterDiv crowdsourcing ethics exp"> <li><a href="pub/BCD21_Position.pdf">Designing and Optimizing Cognitive Debiasing Strategies for Crowdsourcing Annotation (Position Paper)</a><br/>
+Chien-Ju Ho and Ming Yin<br/>
+In the CSCW Workshop on Investigating and Mitigating Biases in Crowdsourced Data (BCD), 2021 <br/>
+</li><br/></div>
 
 
-<div class="filterDiv ml game bias"> <li> <a href="pub/AISTATS21_LinearRobustness.pdf">Linear Models are Robust Optimal Under Strategic Behavior</a><br/>
+<div class="filterDiv allpaper ml game bias"> <li> <a href="pub/AISTATS21_LinearRobustness.pdf">Linear Models are Robust Optimal Under Strategic Behavior</a><br/>
 Wei Tang, Chien-Ju Ho, and Yang Liu<br/>
 In the 24th International Conference on
-Artificial Intelligence and Statistics (AISTATS'21)
+Artificial Intelligence and Statistics (AISTATS), 2021
 </li><br/></div>
 
 
-<div class="filterDiv matching"> <li> <a href="pub/AAMAS21_ScarceMatching.pdf">Efficient Nonmyopic Online Allocation of Scarce Reusable Resources</a><br/>
+<div class="filterDiv allpaper matching"> <li> <a href="pub/AAMAS21_ScarceMatching.pdf">Efficient Nonmyopic Online Allocation of Scarce Reusable Resources</a><br/>
 Zehao Dong, Sanmay Das, Patrick Fowler, and Chien-Ju Ho<br/>
-In the 20th International Conference on Autonomous Agents and Multiagent Systems (AAMAS'21)
+In the 20th International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2021
 </li><br/></div>
 
 
-<div class="filterDiv privacy ethics ml"> <li> <a href="pub/NeurIPS20_SecureOpt.pdf">Optimal Query Complexity of Secure Stochastic Convex Optimization</a><br/>
+<div class="filterDiv allpaper privacy ethics ml"> <li> <a href="pub/NeurIPS20_SecureOpt.pdf">Optimal Query Complexity of Secure Stochastic Convex Optimization</a><br/>
 Wei Tang, Chien-Ju Ho, and Yang Liu<br/>
-In the 34th Conference on Neural Information Processing Systems (NeurIPS'20)
+In the 34th Conference on Neural Information Processing Systems (NeurIPS), 2020
 </li><br/></div>
 
 
-<div class="filterDiv crowdsourcing exp"> <li> <a href="pub/HCOMP20_DiversityCommunication.pdf">Does Exposure to Diverse Perspectives Mitigate Biases in Crowdwork? An Explorative Study</a><br/>
+<div class="filterDiv allpaper crowdsourcing exp"> <li> <a href="pub/HCOMP20_DiversityCommunication.pdf">Does Exposure to Diverse Perspectives Mitigate Biases in Crowdwork? An Explorative Study</a><br/>
 Xiaoni Duan, Chien-Ju Ho, and Ming Yin<br/>
-In the 8th AAAI Conference on Human Computation and Crowdsourcing (HCOMP'20)
+In the 8th AAAI Conference on Human Computation and Crowdsourcing (HCOMP), 2020
 </li><br/></div>
 
-<div class="filterDiv ethics game ml"> <li> <a href="pub/AAMAS20-PrivatePricing.pdf">Differentially Private Contextual Dynamic Pricing</a> <br/>
+<div class="filterDiv allpaper ethics game ml"> <li> <a href="pub/AAMAS20-PrivatePricing.pdf">Differentially Private Contextual Dynamic Pricing</a> <br/>
 Wei Tang, Chien-Ju Ho, and Yang Liu<br/>
-In the 19th International Conference on Autonomous Agents and Multiagent Systems (AAMAS'20)
+In the 19th International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2020
 </li><br/></div>
 
 
-<div class="filterDiv ethics matching"> <li> <a href="pub/EC19_DynamicMatching.pdf">Incorporating Compatible Pairs in Kidney Exchange: A Dynamic Weighted Matching Model</a><br/>
+<div class="filterDiv allpaper ethics matching"> <li> <a href="pub/EC19_DynamicMatching.pdf">Incorporating Compatible Pairs in Kidney Exchange: A Dynamic Weighted Matching Model</a><br/>
 Zhuoshu Li, Kelsey Lieberman, William Macke, Sofia Carrillo, Chien-Ju Ho, Jason Wellen, and Sanmay Das <br/>
-In the 20th ACM conference on Economics and Computation (EC'19)
+In the 20th ACM conference on Economics and Computation (EC), 2019
 </li><br/></div>
 
 
-<div class="filterDiv crowdsourcing exp"> <li> <a href="pub/WWW19_PeerCommunication.pdf">Leveraging Peer Communication to Enhance Crowdsourcing</a><br/>
+<div class="filterDiv allpaper crowdsourcing exp"> <li> <a href="pub/WWW19_PeerCommunication.pdf">Leveraging Peer Communication to Enhance Crowdsourcing</a><br/>
 Wei Tang, Chien-Ju Ho, and Ming Yin<br/>
-In the Web Conference 2019 (formerly known as WWW'19)
+In the Web Conference (WWW), 2019
 </li><br/></div>
 
-<div class="filterDiv bandit ml bias"> <li> <a href="pub/AAMAS19_BiasedBandits.pdf">Bandit Learning with Biased Human Feedback</a><br/>
+<div class="filterDiv allpaper bandit ml bias"> <li> <a href="pub/AAMAS19_BiasedBandits.pdf">Bandit Learning with Biased Human Feedback</a><br/>
 Wei Tang and Chien-Ju Ho<br/>
-In the 18th International Conference on Autonomous Agents and Multiagent Systems (AAMAS'19)
+In the 18th International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2019
 </li><br/></div>
 
-<div class="filterDiv bandit ml game bias"> <li> <a href="pub/AAAI18_NewArm.pdf">Incentivizing High Quality User Contributions: New Arm Generation in Bandit Learning</a></br/>
+<div class="filterDiv allpaper bandit ml game bias"> <li> <a href="pub/AAAI18_NewArm.pdf">Incentivizing High Quality User Contributions: New Arm Generation in Bandit Learning</a></br/>
 Yang Liu and Chien-Ju Ho<br/>
-In the 32nd AAAI Conference on Artificial Intelligence (AAAI'18)
+In the 32nd AAAI Conference on Artificial Intelligence (AAAI), 2018
 </li><br/></div>
 
-<div class="filterDiv crowdsourcing ml game exp bias"> <li> <a href="http://papers.nips.cc/paper/6237-eliciting-categorical-data-for-optimal-aggregation.pdf">Eliciting Categorical Data for Optimal Aggregation</a></br/>
+<div class="filterDiv allpaper crowdsourcing ml game exp bias"> <li> <a href="http://papers.nips.cc/paper/6237-eliciting-categorical-data-for-optimal-aggregation.pdf">Eliciting Categorical Data for Optimal Aggregation</a></br/>
 Chien-Ju Ho, Rafael Frongillo, and Yiling Chen<br/>
-In the 30th Annual Conference on Neural Information Processing Systems (NIPS'16)
+In the 30th Annual Conference on Neural Information Processing Systems (NIPS), 2016
 </li><br/></div>
 
-<div class="filterDiv crowdsourcing bandit game ml bias"> <li><a href="https://jair.org/index.php/jair/article/view/10982">Adaptive Contract Design for Crowdsourcing Markets:<br>Bandit Algorithms for Repeated Principal-Agent Problems</a><br/>
+<div class="filterDiv allpaper crowdsourcing bandit game ml bias"> <li><a href="https://jair.org/index.php/jair/article/view/10982">Adaptive Contract Design for Crowdsourcing Markets:<br>Bandit Algorithms for Repeated Principal-Agent Problems</a><br/>
 Chien-Ju Ho, Aleksandrs Slivkins, and Jennifer Wortman Vaughan<br/>
 Journal of Artificial Intelligence Research, Volume 55, pages 317-359, 2016 <br/>
 (Supersedes the EC'14  paper)
 </li><br/></div>
 
-<div class="filterDiv ml game bias"> <li> <a href="pub/EC15_ActiveBuying.pdf"> Low-Cost Learning via Active Data Procurement </a><br/>
+<div class="filterDiv allpaper ml game bias"> <li> <a href="pub/EC15_ActiveBuying.pdf"> Low-Cost Learning via Active Data Procurement </a><br/>
 Jacob Abernethy, Yiling Chen, Chien-Ju Ho, and Bo Waggoner <br/>
-In the 16th ACM Conference on Economics and Computation (EC'15)</li><br/></div>
+In the 16th ACM Conference on Economics and Computation (EC), 2015</li><br/></div>
 </li>
 
-<div class="filterDiv crowdsourcing exp game"> <li> <a href="pub/WWW15_PBP.pdf">Incentivizing High Quality Crowdwork </a>   <font></font><br/>
+<div class="filterDiv allpaper crowdsourcing exp game"> <li> <a href="pub/WWW15_PBP.pdf">Incentivizing High Quality Crowdwork </a>   <font></font><br/>
 Chien-Ju Ho, Aleksandrs Slivkins, Siddharth Suri, and Jennifer Wortman Vaughan<br/>
-In the 24th International World Wide Web Conference (WWW'15)<br/>
+In the 24th International World Wide Web Conference (WWW), 2015<br/>
 <b>Nominee for Best Paper Award</b><br/>
 </li><br/></div>
 
-<div class="filterDiv bandit crowdsourcing ml game bias"> <li><a href="pub/EC14_DynamicPA.pdf">Adaptive Contract Design for Crowdsourcing Markets:<br>Bandit Algorithms for Repeated Principal-Agent Problems</a><br/>
+<div class="filterDiv allpaper bandit crowdsourcing ml game bias"> <li><a href="pub/EC14_DynamicPA.pdf">Adaptive Contract Design for Crowdsourcing Markets:<br>Bandit Algorithms for Repeated Principal-Agent Problems</a><br/>
 Chien-Ju Ho, Aleksandrs Slivkins, and Jennifer Wortman Vaughan<br/>
-In the 15th ACM Conference on Economics and Computation (EC'14)</li><br/></div>
+In the 15th ACM Conference on Economics and Computation (EC), 2014</li><br/></div>
 
-<div class="filterDiv crowdsourcing matching ml"> <li><a href="pub/ICML13_RepeatedLabel.pdf">Adaptive Task Assignment for Crowdsourced Classification</a><br/>
+<div class="filterDiv allpaper crowdsourcing matching ml"> <li><a href="pub/ICML13_RepeatedLabel.pdf">Adaptive Task Assignment for Crowdsourced Classification</a><br/>
 Chien-Ju Ho, Shahin Jabbari, and Jennifer Wortman Vaughan<br/>
-In the 30th International Conference on Machine Learning (ICML'13)</li><br/></div>
+In the 30th International Conference on Machine Learning (ICML), 2013</li><br/></div>
 
-<div class="filterDiv crowdsourcing matching"> <li><a href="pub/AAAI12_TaskAssignment.pdf">Online Task Assignment in Crowdsourcing Markets</a><br/>
+<div class="filterDiv allpaper crowdsourcing matching"> <li><a href="pub/AAAI12_TaskAssignment.pdf">Online Task Assignment in Crowdsourcing Markets</a><br/>
 Chien-Ju Ho and Jennifer Wortman Vaughan<br/>
-In the 26th Conference on Artificial Intelligence (AAAI'12)</li><br/></div>
+In the 26th Conference on Artificial Intelligence (AAAI), 2012</li><br/></div>
 
-<div class="filterDiv crowdsourcing game"> <li><a href="pub/HCOMP12_SocialNorm.pdf">Towards Social Norm Design for Crowdsourcing Markets</a><br/>
+<div class="filterDiv allpaper crowdsourcing game"> <li><a href="pub/HCOMP12_SocialNorm.pdf">Towards Social Norm Design for Crowdsourcing Markets</a><br/>
 Chien-Ju Ho, Yu Zhang, Jennifer Wortman Vaughan, and Mihaela van der Schaar<br/>
-In the 4th Human Computation Workshop (HCOMP'12)</li><br/></div>
+In the 4th Human Computation Workshop (HCOMP), 2012</li><br/></div>
 <!--
 </ul><br/>
 <context-title>Other Publications</context-title>
@@ -287,38 +291,38 @@ In the 4th Human Computation Workshop (HCOMP'12)</li><br/></div>
 <ul>
 <div class="filterDiv"> <li><a href="pub/AAMAS11.pdf">Multiagent Environment Design in Human Computation (Extended Abstract)</a><br/>
 Chien-Ju Ho, Yen-Ling Kuo, Jane Yung-jen Hsu<br/>
-In the Tenth International Conference on Autonomous Agents and Multiagent Systems (AAMAS'11)</li><br/></div>
+In the Tenth International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2011</li><br/></div>
 -->
 
-<div class="filterDiv gwap"> <li><a href="pub/ACE10-DevilTyper.pdf">DevilTyper: A Game for CAPTCHA Usability Evaluation</a><br/>
+<div class="filterDiv allpaper gwap"> <li><a href="pub/ACE10-DevilTyper.pdf">DevilTyper: A Game for CAPTCHA Usability Evaluation</a><br/>
 Chien-Ju Ho, Chen-Chi Wu, Kuan-Ta Chen, Chin-Laung Lei<br/>
-In ACM Computers in Entertainment, 2011.</li><br/></div>
+In ACM Computers in Entertainment, 2011</li><br/></div>
 
-<div class="filterDiv gwap"> <li><a href="pub/HCOMP09-KKB.pdf">KissKissBan: A Competitive Human Computation Game for Image Annotation (Short Paper)</a><br/>
+<div class="filterDiv allpaper gwap"> <li><a href="pub/HCOMP09-KKB.pdf">KissKissBan: A Competitive Human Computation Game for Image Annotation (Short Paper)</a><br/>
 Chien-Ju Ho, Tao-Hsuan Chang, Jong-Chuan Lee, Jane Yung-jen Hsu, Kuan-Ta Chen<br/>
-In the ACM SIGKDD Workshop on Human Computation (HCOMP'09)<br/>
+In the ACM SIGKDD Workshop on Human Computation (HCOMP), 2009<br/>
 Also appeared in ACM SIGKDD Explorations Newsletter: Volume 12 Issue 1, June 2010</li><br/></div>
 
-<div class="filterDiv gwap game"> <li><a href="pub/HCOMP09-Model.pdf">On Formal Models for Social Verification</a><br/>
+<div class="filterDiv allpaper gwap game"> <li><a href="pub/HCOMP09-Model.pdf">On Formal Models for Social Verification</a><br/>
 
 Chien-Ju Ho, Kuan-Ta Chen<br/>
-In the ACM SIGKDD Workshop on Human Computation (HCOMP'09)</li><br/></div>
+In the ACM SIGKDD Workshop on Human Computation (HCOMP), 2009</li><br/></div>
 <!--
 <div class="filterDiv"> <li><a href="pub/AAMAS08.pdf">Designing Human-Computer Multi-agent Collaboration in Productive Multi-player Games (Short Paper)</a><br/>
 Wenn-Chieh Tsai, Yuan-Hsiang Lee, Tsung-Hsiang Chang, Chien-Ju Ho, Jane Yung-jen Hsu<br/>
 In the Seventh International Conference on Autonomous Agents and Multiagent Systems (AAMAS'08)</li><br/></div>
 -->
-<div class="filterDiv gwap game"> <li><a href="pub/AAAI07.pdf">PhotoSlap: A Multi-player Online Game for Semantic Annotation</a><br/>
+<div class="filterDiv allpaper gwap game"> <li><a href="pub/AAAI07.pdf">PhotoSlap: A Multi-player Online Game for Semantic Annotation</a><br/>
 Chien-Ju Ho, Tsung-Hsiang Chang, Jane Yung-jen Hsu <br/>
-In the 22nd Conference on Artificial Intelligence (AAAI'07)</li><br/></div>
+In the 22nd Conference on Artificial Intelligence (AAAI), 2007</li><br/></div>
 
-<div class="filterDiv gwap"> <li><a href="pub/AAAI07-ISD.pdf">The PhotoSlap Game: Play to Annotate (Intelligent System Demo)</a><br/>
+<div class="filterDiv allpaper gwap"> <li><a href="pub/AAAI07-ISD.pdf">The PhotoSlap Game: Play to Annotate (Intelligent System Demo)</a><br/>
 Tsung-Hsiang Chang, Chien-Ju Ho, Jane Yung-jen Hsu<br/>
-In the 22nd Conference on Artificial Intelligence (AAAI'07)</li><br/></div>
+In the 22nd Conference on Artificial Intelligence (AAAI), 2007</li><br/></div>
 <!-- non-relevant publications
 <div class="filterDiv"> <li><a href="pub/ISF06.pdf">Parameter learning of personalized trust models in broker-based distributed trust management</a><br/>
 Jane Yung-jen Hsu, Kwei-Jay Lin, Tsung-Hsiang Chang, Chien-Ju Ho, Han-Shen Huang, Wan-rong Jih  <br/>
-Information Systems Frontiers, Special Issue on Web and Distributed Information Systems, Springer Publishers, 8(4):321-333, September 2006.</li><br/></div>
+Information Systems Frontiers, Special Issue on Web and Distributed Information Systems, Springer Publishers, 8(4):321-333, September 2006</li><br/></div>
 
 <div class="filterDiv"> <li><a href="pub/UISW05W-ICane.pdf">iCane - A Partner for the Visually Impaired</a><br/>
 Tsung-Hsiang Chang, Chien-Ju Ho, David Chawei Hsu, Yuan-Hsiang Lee, Min-Shieh Tsai,Mu-Chun Wang, Jane Yung-jen Hsu<br/>
@@ -442,6 +446,7 @@ Organizer <br/>
 </body>
 
 <script>
+showPapers('all');
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
