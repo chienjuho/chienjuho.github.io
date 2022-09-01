@@ -1,0 +1,22 @@
+﻿Title,Questions Name,Questions Type,Answers
+Left Figure,,,
+,Which hypothesis set would you choose,single,
+,,,H_2
+,,,H_10
+Right Figure,,,
+,Which hypothesis set would you choose,single,
+,,,H_2
+,,,H_10
+d_vc 1,,,
+,"To prove d_vc >= d+1, what do we need to prove?",single,
+,,,There is a set of d + 1 points that can be shattered by H
+,,,There is a set of d + 1 points that cannot be shattered by H
+,,,Every set of d + 1 points  can be shattered by H
+,,,Every set of d + 1 points  cannot be shattered by H
+d_vc 2,,,
+,"To prove d_vc <= d+1, what do we need to prove?",single,
+,,,There is a set of d + 1 points that can be shattered by H
+,,,There is a set of d + 2 points that can be shattered by H
+,,,Every set of d + 2 points  can be shattered by H
+,,,Every set of d + 1 points  cannot be shattered by H
+,,,Every set of d + 2 points  cannot be shattered by H

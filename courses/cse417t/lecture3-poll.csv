@@ -1,0 +1,25 @@
+﻿Title,Questions Name,Questions Type,Answers
+python help,,,
+,would you be interested in a python session?,single,
+,,,"yes, that would be helpful"
+,,,"no, I'm familiar with it"
+poll 1,,,
+,expected # heads,single,
+,,,5
+,,,> 5
+,,,< 5
+poll 2,,,
+,expected # heads,single,
+,,,5
+,,,> 5
+,,,< 5
+poll 3,,,
+,expected # heads,single,
+,,,5
+,,,> 5
+,,,< 5
+poll 4,,,
+,expected # heads,single,
+,,,5
+,,,> 5
+,,,< 5

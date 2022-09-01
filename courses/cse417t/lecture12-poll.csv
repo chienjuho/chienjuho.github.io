@@ -1,0 +1,18 @@
+﻿Title,Questions Name,Questions Type,Answers
+Mean of E_test vs. Test Set K,,,
+,How does the expectation of E_test change as K increases,single,
+,,,Increase
+,,,decreases
+,,,increase then decrease
+,,,decrease then increase
+Variance of E_test vs. Test Set K,,,
+,How does the variance of E_test change as K increases,single,
+,,,Increase
+,,,decreases
+,,,increase then decrease
+,,,decrease then increase
+E_val relationship,,,
+,Which of the following is true,single,
+,,,(a)
+,,,(b)
+,,,(c)
