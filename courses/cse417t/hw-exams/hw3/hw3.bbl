@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+
+\bibitem{l1}
+John Langford, Lihong Li, and Tong Zhang.
+\newblock Sparse online learning via truncated gradient.
+\newblock {\em Journal of Machine Learning Research}, 10:777–801, 2009.
+
+\end{thebibliography}

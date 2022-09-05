@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textheight}{9in}
+
+%\usepackage{multirow}
+%\usepackage{rotating}
+\usepackage{bm}
+\usepackage[fleqn]{amsmath}
+\usepackage{natbib}
+\usepackage{palatino}
+%\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{CSE 417T: Homework 3}
+\date{Due: March 5 (Saturday), 2022}
+
+\vspace{-20pt}
+\maketitle
+
+\noindent \textbf{Notes: } 
+\begin{itemize}
+
+\item Please submit your homework via Gradescope and check the \href{http://chienjuho.com/courses/cse417t/hw_instructions.html}{\underline{submission instructions}}.
+
+\vspace{-5pt}
+\item There will be two submission links for homework 3: one for report and the other for code. \textbf{Your score will be based on the report.} The code you submit is only used for checking the correctness and for running plagiarism checkers.
+
+\vspace{-5pt}
+\item Make sure you \textbf{specify the pages for each problem correctly}. You \textbf{will not get points} for problems that are not correctly connected to the corresponding pages.
+
+\vspace{-5pt}
+\item Homework is due \textbf{by 11:59 PM on the due date.} Remember that
+  you may not use more than 2 late days on any one homework, and you
+  only have a budget of 5 in total.
+
+\vspace{-5pt}
+\item Please keep in mind the collaboration policy as specified in the
+  course syllabus. If you discuss questions with 
+others you \textbf{must} write their names on your submission, and if
+you use any outside resources you \textbf{must} reference
+them. \textbf{Do not look at each others' writeups, including code.}
+
+\vspace{-5pt}
+\item There are 4 problems on 2 pages in this homework. 
+
+\end{itemize}
+
+\noindent \textbf{Problems:}
+
+\begin{enumerate}
+
+\item (40 points)
+The weight decay regularizer is also called $L_2$ regularizer, since $\vec{w}^T\vec{w}$ is the square of the $2$-norm of the weight vector $\|\vec{w}\|_2=\sqrt{\sum_{i=0}^d w_i^2}$.
+%In this problem, you will modify your codes in homework 2 and implement $L_1$ and $L_2$ regularizations ($L_2$ regularization is weight decay) for logistic regression.
+Another common regularizer is called $L_1$ regularizer, since $1$-norm ($\|\vec{w}\|_1=\sum_{i=0}^d |w_i|$) is used as the regularizer.
+
+\vspace{1pt}
+Below are the definitions of the two regularizations\footnote{When applying these regulerizations to linear regression, they are called Ridge Regression ($L_2$ regularizer) and Lasso Regression ($L_1$ regularizer) respectively.}:
+\begin{itemize}
+    \item $L_1$ regularization: $E_{aug}(\vec{w})=E_{in}(\vec{w})+\lambda \|\vec{w}\|_1$
+    \item $L_2$ regularization: $E_{aug}(\vec{w})=E_{in}(\vec{w})+\lambda \vec{w}^T\vec{w}$
+\end{itemize}
+
+
+\begin{itemize}
+    \item[(a)] Answer LFD Problem 4.8. 
+    \item[(b)] Similar to Problem 4.8, derive the update rule of gradient descent for minimizing the augmented error with $L_1$ regularizer. 
+
+    Note that the gradient of $1$-norm is not well-defined at $0$. 
+    To address this issue, we can utilize the \emph{subgradient} idea defined as follows:
+    \vspace{-10pt}
+    \[
+        \frac{\partial}{\partial w_i} \|\vec{w}\|_1 =
+        \begin{cases}
+            +1 & \mbox{if $w_i > 0$}\\
+            \mbox{any value in $[-1,1]$} & \mbox{if $w_i = 0$}\\
+            -1 & \mbox{if $w_i < 0$}
+        \end{cases}
+    \]
+    To simplify the discussion, we let $\frac{\partial}{\partial w_i} \|\vec{w}\|_1=0$ when $w_i=0$. 
+    Please write down the update rule of gradient descent for $L_1$ regularization. (You can define a $sign()$ function that returns $+1, 0, -1$ when the input is positive, zero, negative).
+    
+    \vspace{5pt}
+    Note for implementation: 
+    we will use \emph{truncated} gradient~\cite{l1} when implementing $L_1$ regularizer\footnote{The reason to do so is to preserve the nice property of $L_1$ regularization (i.e., more likely to learn weights with many $0$s) during gradient descent.}.
+    Let $\vec{w}'(t+1)\leftarrow\vec{w}(t)- \eta\nabla E_{\text{in}}(\vec{w}(t))$ be the update rule of gradient descent without regularization.
+    The update rule for $L_1$ regularization should be in the form of 
+
+    \vspace{-18pt}
+    \[\vec{w}(t+1)\leftarrow \vec{w}'(t+1) + \text{additional term}\]
+    
+    \vspace{-5pt}
+    The additional term represents the effect of $L_1$ regularization compared with no regularization.
+    Truncated gradient works as follows:
+    At each step $t$, you first perform the update as what you derive above.
+    Then for each dimension $i$, if $w_i(t+1)$ and $w_i'(t+1)$ have different signs and when $w_i'(t+1)\neq 0$, we set the update $w_i(t+1)$ to $0$ (i.e., we \emph{truncate} the update if the additional term makes the new weight change signs).
+    
+    \vspace{5pt}
+    \item[(c)] Update your implementation of logistic regression in HW2 to include the $L_1$ and $L_2$ regularizers (use truncated gradient for $L_1$ regularizer). 
+    Conduct the following experiment and include the results in your report.
+    Also submit the updated python implementation (feel free to update the function headers and/or define new functions). 
+
+    \vspace{5pt}
+    You will work with \href{https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html}{\underline{digits dataset}}, classifying 
+    whether a digit belongs to $\{1,6,9\}$ (labeled as $-1$) or $\{0,7,8\}$ (labeled as $+1$).
+    Below is the link to the pre-processed data.\\
+    \url{http://chienjuho.com/courses/cse417t/hw3/hw3.html}
+
+    \vspace{5pt}
+    Examine different $\lambda=0, 0.0001, 0.001, 0.005, 0.01, 0.05, 0.1$ for both $L_1$ and $L_2$ regularizations.
+    Train your models on the training set. For each trained model,
+    report (1) the classification error on the test set and (2) the number of $0$s in your learned weight vector.
+    Describe your observations and the property of the $L_1$ regularizer.
+    
+    \vspace{5pt}
+    For the other parameters, please use the following. 
+    Normalize the features. 
+    Set learning rate $\eta=0.01$. 
+    The maximum number of iterations is $10^4$. 
+    Terminate learning if the magnitude of every element of the gradient (of $E_{in}$) is less than $10^{-6}$.
+    When calculating classification error, classify the data using a cutoff probability of 0.5.
+
+    \vspace{5pt}
+    \textbf{Note:} While we don't grade on your code efficiency, you are encouraged to check out \emph{vectorization}. The difference in running time is significant.
+
+\end{itemize}
+\item (15 points) LFD \textbf{Exercise} (not Problem) 4.5
+
+\item (25 points) LFD Problem 4.25 (a) to (c) 
+
+\item (20 points) LFD Problem 5.4. 
+The problem makes a simplifying definition: a stock is called ``profitable'' if it went up half of the days (and whether a stock goes up or down in a day is a random draw from a distribution that associates with how good that stock is).
+While this definition of ``profitable'' might not be accurate in practice, please use it for your discussion.
+
+%\item (20 points)
+%You have been hired by a biologist to learn a decision tree to determine whether a mushroom is poisonous. You have been given the following data:
+%
+%\vspace{-7pt}
+%\begin{center}
+%\begin{tabular}{| c | c | c | c |}
+%    \hline
+%    Color & Stripes & Texture & Poisonous? \\
+%    \hline
+%    Purple  & No    & Smooth    & No \\
+%    Purple  & No    & Rough     & No \\
+%    Red     & Yes   & Smooth    & No \\
+%    Purple  & Yes   & Rough     & Yes \\
+%    Purple  & Yes   & Smooth    & Yes \\
+%    \hline
+%\end{tabular}
+%\end{center}
+%\vspace{-7pt}
+%
+%Use ID3 to learn a decision tree from the data (this is a written exercise -- no need to code it up):
+%\begin{itemize}
+%    \item[(a)] What is the root attribute of the tree? Show the computations.
+%    \item[(b)] Draw the decision tree obtained using ID3.
+%\end{itemize}
+%
+%
+\bibliographystyle{plain}
+\footnotesize{
+\bibliography{mybib}
+}
+\end{enumerate}
+
+
+\end{document}

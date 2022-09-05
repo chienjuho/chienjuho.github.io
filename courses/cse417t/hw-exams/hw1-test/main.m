@@ -1,0 +1,1 @@
+[num_iter, bounds]=  perceptron_experiment ( 100, 10, 100)

@@ -1,0 +1,169 @@
+\documentclass[11pt]{article}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textheight}{9in}
+
+%\usepackage{multirow}
+%\usepackage{rotating}
+\usepackage[fleqn]{amsmath}
+\usepackage{natbib}
+\usepackage{palatino}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{CSE 417T: Homework 4}
+\date{Due: April 1 (Friday), 2022}
+
+\maketitle
+
+
+\noindent \textbf{Notes: } 
+\begin{itemize}
+
+\item Please submit your homework via Gradescope and check the \href{http://chienjuho.com/courses/cse417t/hw_instructions.html}{\underline{submission instructions}}.
+
+\item Please download the following files for this homework.\\
+    \url{http://chienjuho.com/courses/cse417t/hw4/hw4.html}
+
+\item Homework is due \textbf{by 11:59 PM on the due date.} Remember that
+  you may not use more than 2 late days on this homework, and you
+  only have a budget of 5 in total.
+
+\item Please keep in mind the collaboration policy as specified in the
+  course syllabus. If you discuss questions with 
+others you \textbf{must} write their names on your submission, and if
+you use any outside resources you \textbf{must} reference
+them. \textbf{Do not look at each others' writeups, including code.}
+
+\item Please comment your code properly.
+
+\item There are 5 problems on 3 pages in this homework. 
+
+\end{itemize}
+
+\noindent \textbf{Problems:}
+
+\begin{enumerate}
+
+\item (50 points) The purpose of this problem is to write code for bagging decision trees and computing the out-of-bag error.
+You may use \texttt{sklearn.tree.DecisionTreeClassifier} function\footnote{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html}, which learns decision trees (read the documentation carefully), but do not use the inbuilt functions for producing bagged ensembles. 
+%Note that it only returns the out-of-bag error.
+%You may use matlab's inbuilt \texttt{fitctree} function, which learns decision trees using the CART algorithm (read the documentation carefully), but do not use the inbuilt functions for producing bagged ensembles. 
+%In order to do this, you should complete the stub \texttt{BaggedTrees} function. Note that it only returns the out-of-bag error. You may want to use other functions that actually construct and maintain the ensemble. 
+You may assume that all the \textbf{x} vectors in the input are vectors of real numbers, and there are no categorical variables/features. You will compare the performance of the bagging method with plain decision trees on the handwritten digit recognition problem (the dataset is in \texttt{zip.train} and \texttt{zip.test},
+available from \url{http://amlbook.com/support.html}.~\footnote{Check the links to ``training set'' and ``test set''.})
+
+We will focus on two specific binary classification problems -- distinguishing between the digit one and the digit three, and distinguishing between the digit three and the digit five. You need to report the results for both problems (1 versus 3 and 3 versus 5).
+
+\begin{itemize}
+    \item Code (Complete and submit \texttt{hw4.py})
+    \begin{itemize}
+        \item[a] Write code that creates training and testing datasets from \texttt{zip.train} and \texttt{zip.test} 
+        for the two binary classification problems. 
+        The first will only include digits classified as one or three. 
+        The second will only include digits classified as three or five. 
+        
+        \item[b] Complete the implementation of \texttt{bagged\_trees}. 
+        For each bag, please learn a fully grown tree and use information gain as the split criterion.
+        You do not need to implement the random feature split.
+        You can update the function headers or write new functions for your convenience. 
+        The requirement is that you need to be able to calculate and plot the out-of-bag error as a function of the number of bags from 1 to the number specified as input (\texttt{num\_bags}), 
+
+        \item[c] Learn a single decision tree model (again, fully grown with information gain as the split criterion) from the training dataset and calculate the test error on the test set.
+    \end{itemize}
+        %Run the provided \texttt{OneThreeFive} script, which creates training datasets based on the one-vs-three and three-vs-five cases we are interested in, and calls both the in-built decision tree routine and your bagging code, printing out the cross-validation error for decision trees and the OOB error for your bagging implementation. Report the results in your writeup.
+        %\item[c]  Now, learn a single decision tree model for each of the two specified problems (one-vs-three and three-vs-five) on the training data, and test their performance on \texttt{zip.test} – what is the test error? Similarly, learn a single ensemble of 200 trees on the training data for each of the two specified problems and test the performance of the ensembles on the test data. Report your results.
+    
+    \item Report:\\
+        For each of the problems (1 versus 3 and 3 versus 5):
+        \begin{itemize}
+            \item[a] Plot the OOB error for bagging decision trees with the number of bags from 1 to 200 (with x-axis being the number of bags, and y-axix being the OOB error). Make sure the axes are clearly labeled.
+            \item[b] Report the OOB error of bagging decision trees (with 200 trees) and the test errors of (1) a single decision tree and (2) bagging decision trees (with 200 trees).
+        \end{itemize}
+        
+        Summarize and interpret your results in one or two concise paragraphs as part of your writeup.
+        You should at least comment on 1) the differences between the one-vs-three and three-vs- five problems, 2) the effect of increasing the number of bags, and 3) the connection between OOB error and test error.
+\end{itemize}
+
+%\item (50 points) Implement AdaBoost using decision stumps learned using information gain as the weak learners (you may use the \texttt{fitctree} function to implement the weak learner. Look at the "deviance" split criterion), and apply this to one-vs-three and three-vs-five problems (as described in Question 1) on the \texttt{zip.train} and \texttt{zip.test} data. In order to do this, you should complete the stub \texttt{AdaBoost} function. Graphically report the training set error and the test set error as a function of the number of weak hypotheses, and summarize and interpret your results.
+
+\item (20 points)
+You have been hired by a biologist to learn a decision tree to determine whether a mushroom is poisonous. You have been given the following data:
+
+\vspace{-7pt}
+\begin{center}
+\begin{tabular}{| c | c | c | c |}
+    \hline
+    Color & Stripes & Texture & Poisonous? \\
+    \hline
+    Purple  & No    & Smooth    & No \\
+    Purple  & No    & Rough     & No \\
+    Red     & Yes   & Smooth    & No \\
+    Purple  & Yes   & Rough     & Yes \\
+    Purple  & Yes   & Smooth    & Yes \\
+    \hline
+\end{tabular}
+\end{center}
+\vspace{-7pt}
+
+Use ID3 to learn a decision tree from the data (this is a written exercise -- no need to code it up):
+\begin{itemize}
+    \item[(a)] What is the root attribute of the tree? Show the computations.
+    \item[(b)] Draw the decision tree obtained using ID3.
+\end{itemize}
+
+\item (10 points)
+Think about weak learners in AdaBoost for a 2-class classification problem.
+Suppose you're using depth 0 decision trees, which
+  simply return the weighted majority class of the data points as the
+  classification, as the weak learner. 
+  Imagine that, at the first iteration, 80\% of the data points were positive 
+  and 20\% of the data points were negative.
+  What would the cumulative weight of positive points and the cumulative weight of negative data points be after one round of boosting)?
+  From your result, do you think whether using
+  depth 0 decision trees as weak learners is a good idea?
+
+\item (5 points)
+Assume we want to use bagging to solve a regression problem. 
+Argue why using linear regression as weak learners for bagging might be a bad idea.
+
+%\item (5 points)
+%Suppose your input data consists of the following $(x, y)$ pairs:
+%\[
+%(3, 5); (5, 6); (7, 9); (2, 11); (3, 8)
+%\]
+%What value of $y$ would you predict for a test example where $x = 3.2$ 
+%using the 3-nearest neighbors regression?
+
+\item (15 points) Read the article(s) in one of the topics below:\\
+\url{https://docs.google.com/document/d/1QmKDwodF9gTZQzrzQuES6EXDDwmqNWOfRFqGqTP83k8/edit?usp=sharing}
+%\url{https://wustl.box.com/s/x68vmeajbgeoz1owsz640i8tvjr1ezxs}.
+
+Answer the following questions:
+\begin{itemize}
+    \item[(a)] Summarize the article(s) in one paragraph.
+    \item[(b)] Rephrase the issues raised in the article using the language you learned in this course.
+    \item[(c)] Propose potential approaches to mitigate the issues raised in the article.
+\end{itemize}
+
+This question will be graded in a loose manner.
+The grading will focus on 
+1) whether you have put thoughts into your answer, and
+2) whether your answers are logical (i.e., it's okay to give unpopular opinion, but make sure you provide your reasoning).
+
+Example grades (not an exhaustive list, but just an illustration):\\
+You will get full points if the summary is accurate, and the proposed approach makes sense (e.g., feasible if you are given the data and resource). 
+You will get 10 points with an accurate summary but non-negligible flaws in the proposed approach.  
+You will get 5 points for providing inaccurate summary (e.g., incorrect mapping to the language in this course).
+
+\end{enumerate}
+
+%\noindent
+%For code submissions, please submit all files that will be needed to return the results. You are free to modify \texttt{OneThreeFive.m} and/or include additional files. The only requirements are (1) the results can be obtained by running \texttt{OneThreeFive.m} and (2) the two stub files are filled in.  
+%It is okay to have additional files. 
+%It is also okay if you want to modify the input/output specification slightly, but please make sure you commented it appropriately.
+
+\end{document}
