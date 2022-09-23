@@ -65,24 +65,12 @@ def logistic_reg(X, y, w_init, max_its, eta, grad_threshold):
     y = y.reshape(-1, 1)
 
     # Run gradient descent
-    if max_its == None:
-        # For part B
-        t = 0
-        v = np.repeat(np.inf, N)
-
-        while (any(abs(v) > grad_threshold)):
-            v = np.sum((-y * X_adj) / (1 + np.exp(y * np.matmul(X_adj, w))), axis=0).T / N
-            v = v.reshape(-1, 1)
-            w = w - eta * v
-            t = t + 1
-    else:
-        # For part A
-        for t in range(0, max_its + 1):
-            v = np.sum((-y * X_adj) / (1 + np.exp(y * np.matmul(X_adj, w))), axis=0).T / N
-            v = v.reshape(-1, 1)
-            w = w - eta * v
-            if all(abs(v) < grad_threshold):
-                break
+    for t in range(1, max_its+1):
+        v = np.sum((-y * X_adj) / (1 + np.exp(y * np.matmul(X_adj, w))), axis=0).T / N
+        v = v.reshape(-1, 1)
+        w = w - eta * v
+        if all(abs(v) < grad_threshold):
+            break
 
     # Calculate loss
     e_in = np.sum(np.log(1 + np.exp(-y * np.matmul(X_adj, w))), axis=0) / N
