@@ -38,8 +38,9 @@
   only have a budget of 5 in total.
 
 \vspace{-5pt}
-\item Please keep in mind the collaboration policy as specified in the
-  course syllabus. If you discuss questions with 
+\item Please keep in mind the collaboration policy.
+%as specified in the course syllabus. 
+  If you discuss questions with 
 others you \textbf{must} write their names on your submission, and if
 you use any outside resources you \textbf{must} reference
 them. \textbf{Do not look at each others' writeups, including code.}
@@ -86,7 +87,7 @@ Below are the definitions of the two regularizations\footnote{When applying thes
     
     \vspace{5pt}
     Note for implementation: 
-    we will use \emph{truncated} gradient~\cite{l1} when implementing $L_1$ regularizer\footnote{The reason to do so is to preserve the nice property of $L_1$ regularization (i.e., more likely to learn weights with many $0$s) during gradient descent.}.
+    we will use \emph{truncated} gradient~\cite{l1} when implementing $L_1$ regularizer\footnote{The reason to do so is to preserve the nice property of $L_1$ regularization (i.e., more likely to learn weights with many $0$s) during gradient descent. More details can be found in the reference~\cite{l1}, which you should already have enough background knowledge to understand the key ideas.}.
     Let $\vec{w}'(t+1)\leftarrow\vec{w}(t)- \eta\nabla E_{\text{in}}(\vec{w}(t))$ be the update rule of gradient descent without regularization.
     The update rule for $L_1$ regularization should be in the form of 
 
