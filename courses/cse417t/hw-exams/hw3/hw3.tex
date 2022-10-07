@@ -46,7 +46,7 @@ you use any outside resources you \textbf{must} reference
 them. \textbf{Do not look at each others' writeups, including code.}
 
 \vspace{-5pt}
-\item There are 4 problems on 2 pages in this homework. 
+\item There are 4 problems on 3 pages in this homework. 
 
 \end{itemize}
 
@@ -86,10 +86,14 @@ Below are the definitions of the two regularizations\footnote{When applying thes
     Please write down the update rule of gradient descent for $L_1$ regularization. (You can define a $sign()$ function that returns $+1, 0, -1$ when the input is positive, zero, negative).
     
     \vspace{5pt}
-    Note for implementation: 
-    we will use \emph{truncated} gradient~\cite{l1} when implementing $L_1$ regularizer\footnote{The reason to do so is to preserve the nice property of $L_1$ regularization (i.e., more likely to learn weights with many $0$s) during gradient descent. More details can be found in the reference~\cite{l1}, which you should already have enough background knowledge to understand the key ideas.}.
+    \textbf{Truncated gradient (for part (c))}:
+    In Lasso regression (linear regression with $L_1$ regularization), one nice property is that it tends to learn a weight vector with many $0$s. However, if we perform gradient descent on the augmented error with $L_1$ regularization, it won't lead to this nice property partly due to the not-well-defined behavior of subgradient. 
+    In this homework, you will implement \emph{truncated} gradient~\cite{l1}, an approach trying to maintain the nice property of $L_1$ regularizations, as described below.
+%    we will use \emph{truncated} gradient~\cite{l1} when implementing $L_1$ regularizer\footnote{The reason to do so is to preserve the nice property of $L_1$ regularization (i.e., more likely to learn weights with many $0$s) during gradient descent. More details can be found in the reference~\cite{l1}, which you should already have enough background knowledge to understand the key ideas.}.
+    
+    \vspace{3pt}
     Let $\vec{w}'(t+1)\leftarrow\vec{w}(t)- \eta\nabla E_{\text{in}}(\vec{w}(t))$ be the update rule of gradient descent without regularization.
-    The update rule for $L_1$ regularization should be in the form of 
+    The update rule for $L_1$ regularization that you derived should be in the form of 
 
     \vspace{-18pt}
     \[\vec{w}(t+1)\leftarrow \vec{w}'(t+1) + \text{additional term}\]
@@ -97,11 +101,11 @@ Below are the definitions of the two regularizations\footnote{When applying thes
     \vspace{-5pt}
     The additional term represents the effect of $L_1$ regularization compared with no regularization.
     Truncated gradient works as follows:
-    At each step $t$, you first perform the update as what you derive above.
-    Then for each dimension $i$, if $w_i(t+1)$ and $w_i'(t+1)$ have different signs and when $w_i'(t+1)\neq 0$, we set the update $w_i(t+1)$ to $0$ (i.e., we \emph{truncate} the update if the additional term makes the new weight change signs).
+    At each step $t$, you first perform the update and obtain $\vec{w}(t+1)$.
+    Then for each dimension $i$, if $w_i(t+1)$ and $w_i'(t+1)$ have different signs and when $w_i'(t+1)\neq 0$, we set the update $w_i(t+1)$ to $0$ (i.e., we \emph{truncate} the update if the additional term makes the new weight change signs). \footnote{One informal way to think about truncated gradient is that, it splits each update into many tiny steps of updates. When a tiny update makes some dimension of the weight cross $0$, you can assign the subgradient value in the additional term appropriately to make it stay at $0$. So it is still a valid gradient descent for $L_1$ regularization, but just "choose" values for subgradients to make the weights stay at 0 as much as possible.}
     
     \vspace{5pt}
-    \item[(c)] Update your implementation of logistic regression in HW2 to include the $L_1$ and $L_2$ regularizers (use truncated gradient for $L_1$ regularizer). 
+    \item[(c)] Update your implementation of logistic regression in HW2 to include the $L_1$ and $L_2$ regularizers (use truncated gradient for $L_1$ regularizer and regular gradient descent for $L_2$ regularizers). 
     Conduct the following experiment and include the results in your report.
     Also submit the updated python implementation (feel free to update the function headers and/or define new functions). 
 
@@ -115,7 +119,7 @@ Below are the definitions of the two regularizations\footnote{When applying thes
     Examine different $\lambda=0, 0.0001, 0.001, 0.005, 0.01, 0.05, 0.1$ for both $L_1$ and $L_2$ regularizations.
     Train your models on the training set. For each trained model,
     report (1) the classification error on the test set and (2) the number of $0$s in your learned weight vector.
-    Describe your observations and the property of the $L_1$ regularizer.
+    Describe your observations. % and the property of the $L_1$ regularizer.
     
     \vspace{5pt}
     For the other parameters, please use the following. 
