@@ -124,8 +124,6 @@ def logistic_reg_regularizer(X, y, w_init, max_its, eta, reg, penalty):
             w = w_new
             if all(abs(v) < threshold):
                 break
-            if t == max_its:
-                print("HIT");
     elif penalty == "L2":
         for t in range(0, max_its + 1):
             v = np.sum((-y * X_adj) / (1 + np.exp(y * np.matmul(X_adj, w))), axis=0).T / N
@@ -133,8 +131,6 @@ def logistic_reg_regularizer(X, y, w_init, max_its, eta, reg, penalty):
             w = w - eta * v
             if all(abs(v) < threshold):
                 break
-            if t == max_its:
-                print("HIT L1");
 
     e_in = np.sum(np.log(1 + np.exp(-y * np.matmul(X_adj, w))), axis=0) / N
 
@@ -211,7 +207,7 @@ def main_digits():
     X_test_zscore = std_scale.transform(X_test)
     learning_rates = 0.01
     reg_lambdas = [ 0.0001, 0.001,0.005, 0.01, 0.05, 0.1]
-    max_iterations = 10 ** 6
+    max_iterations = 10 ** 4
 
     eta = learning_rates
     tic = time.perf_counter()
