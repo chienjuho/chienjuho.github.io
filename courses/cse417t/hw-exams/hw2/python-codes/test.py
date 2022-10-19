@@ -132,6 +132,7 @@ def main():
         test_error = find_binary_error(w, X_test_zscore, y_test)
 
         print(eta, t, e_in[0], train_error, test_error, train_time)
+        print(w)
 
 
 if __name__ == "__main__":
